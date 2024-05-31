@@ -1,0 +1,73 @@
+﻿@model List<AgriEnergy_ST10204001_POE_Part_2.Models.Product>
+
+@{
+	ViewData["Title"] = "View products";
+}
+
+<style>
+	.card:hover {
+		box-shadow: -1px 9px 40px -12px #808080;
+	}
+</style>
+
+<h1>Products</h1>
+
+<form method="get" asp-action="Index">
+	<div>
+		<label for="startDate">Start Date:</label>
+		<input type="date" id="startDate" name="startDate" value="@ViewBag.StartDate" />
+	</div>
+	<div>
+		<label for="endDate">End Date:</label>
+		<input type="date" id="endDate" name="endDate" value="@ViewBag.EndDate" />
+	</div>
+	<div>
+		<label for="category">Category:</label>
+		<select id="category" name="category">
+			<option value="">All Categories</option>
+			@foreach (var item in ViewBag.Categories)
+			{
+				<option value="@item.Value" selected="@item.Selected">@item.Text</option>
+			}
+		</select>
+	</div>
+	<button class="btn btn-success" type="submit">Filter</button>
+</form>
+
+<div class="row">
+	@foreach (var product in Model)
+	{
+		<div class="card" style="width:10cm;margin:10px;">
+			<img src="" class="card-img-top" />
+			<div class="card-body">
+				<div class="card-title">
+					<h2>@product.ProductName</h2>
+				</div>
+				<div class="card-text">
+					<p>@product.Category</p>
+					<p>@product.ProductionDate.Value.Date</p>
+				</div>
+				<a href="a" class="btn btn-primary">Read More...</a>
+			</div>
+		</div>
+	}
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+	$('.card').hover(
+		function () {
+			$(this).animate((
+				marginTop: "-=1%"
+					marginBottom: "+=1%"
+			), 200)
+		),
+		function () {
+			$(this).animate((
+				marginTop: "+=1%"
+						marginBottom: "-=1%"
+			))
+		}
+
+			}
+</script>

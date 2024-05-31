@@ -1,0 +1,99 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+/*-------------------Custom CSS------------------------*/
+
+*:not(.fa-solid):not(.fa):not(.e-icons) {
+    font-family: "Inter"
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #12161d;
+    background-image: url('../farm.png');
+    background-size: cover;
+    color: white;
+    font-family: Roboto, sans-serif;
+    /*    overflow: hidden;*/
+}
+
+.e-bigger {
+    font-size: x-large;
+}
+
+.main-content {
+    margin-left: 290px;
+    overflow-y: auto;
+    height: 92vh;
+}
+
+/* BreadCrumb */
+.e-breadcrumb a, .e-breadcrumb a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Button */
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.btn.btn-outline-light {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* Hyperlink */
+.no-a-decoration, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Logo */
+.logo-wrapper {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.app-logo {
+    padding: 10px 10px;
+}
+
+/* Navbar */
+nav.navbar {
+    backdrop-filter: blur(20px);
+    background-color: transparent;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+
+ /*   nav.navbar i {
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        
+    }
+
+        nav.navbar i:hover, nav.navbar img:hover {
+            cursor: pointer;
+            background-color: #48545f14;
+            transform: scale(1.05) translateZ(0px);
+        }*/
+
+/*-----------------------------------------------------------------------------------------------*/
