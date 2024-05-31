@@ -27,16 +27,6 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-           @* <div>
-                 <label asp-for="Input.Role"></label>
-                 <select asp-for="Input.Role" class="form-select" aria-required="true" asp-items="@Model.Input.RolesList" readonly>
-                    <option disabled selected>--Select Role--</option>
-					</select> 
-
-                <input asp-for="Input.Role" class="form-control" readonly />
-                 <input type="hidden" asp-for="Input.Role" /> 
-                <span asp-validation-for="Input.Role" class="text-danger"></span>
-            </div> *@
             <div>
                 <label asp-for="Input.ContactNumber">Contact Number</label>
                 <input asp-for="Input.ContactNumber" class="form-control" aria-required="true" />
