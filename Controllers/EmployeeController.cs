@@ -90,7 +90,7 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
         [HttpGet]
-        public async Task<IActionResult> Index(string category, string farmType)
+        public async Task<IActionResult> Index(string category, string farmType, DateTime? startDate, DateTime? endDate)
         {
 
             IQueryable<FarmerDetail> farmers = _context.FarmerDetails.Include(f => f.UserModel);
@@ -140,13 +140,28 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
                 Selected = ft == farmType // Set selected item based on current farm type
             }).ToList();
 
-            // Pass the filter values and dropdown items to the view
-            ViewBag.Category = category;
+			IQueryable<Product> products = _context.Products.Include(f => f.UserModel);
+
+			if (startDate.HasValue)
+			{
+				products = products.Where(p => p.ProductionDate >= startDate.Value);
+			}
+
+			if (endDate.HasValue)
+			{
+				products = products.Where(p => p.ProductionDate <= endDate.Value);
+			}
+
+			// Pass the filter values and dropdown items to the view
+			ViewBag.Category = category;
             ViewBag.Categories = categoryItems;
             ViewBag.FarmType = farmType;
             ViewBag.FarmTypes = farmTypeItems;
 
-            var model = await farmers.ToListAsync();
+			ViewBag.StartDate = startDate?.ToString("yyyy-MM-dd");
+			ViewBag.EndDate = endDate?.ToString("yyyy-MM-dd");
+
+			var model = await farmers.ToListAsync();
 
             return View(model);
 
