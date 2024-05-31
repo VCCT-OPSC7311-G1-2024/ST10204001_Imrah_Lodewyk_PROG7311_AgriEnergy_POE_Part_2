@@ -4,48 +4,51 @@
     ViewData["Title"] = "Farmers List";
 }
 
-<h1>Farmers</h1>
 
-<form method="get" asp-action="Index">
-    <div>
-        <label for="category">Product Category:</label>
-        <select id="category" name="category">
-            <option value="">All Categories</option>
-            @foreach (var item in ViewBag.Categories)
-            {
-                <option value="@item.Value" selected="@item.Selected">@item.Text</option>
-            }
-        </select>
-    </div>
-    <div>
-        <label for="farmType">Farm Type:</label>
-        <input type="text" id="farmType" name="farmType" value="@ViewBag.FarmType" />
-    </div>
-    <button class="btn btn-success" type="submit">Filter</button>
-</form>
+<div class="transparent-card">
+	<h1>Farmers</h1>
 
-<br />
+	<form method="get" asp-action="Index">
+		<div>
+			<label for="category">Product Category:</label>
+			<select id="category" name="category">
+				<option value="">All Categories</option>
+				@foreach (var item in ViewBag.Categories)
+				{
+					<option value="@item.Value" selected="@item.Selected">@item.Text</option>
+				}
+			</select>
+		</div>
+		<div>
+			<label for="farmType">Farm Type:</label>
+			<input type="text" id="farmType" name="farmType" value="@ViewBag.FarmType" />
+		</div>
+		<button class="btn btn-outline-light" type="submit">Filter</button>
+	</form>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Contact</th>
-            <th>Address</th>
-            <th>Farm Type</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var farmer in Model)
-        {
-            <tr>
-                <td>@farmer.UserModel.FirstName</td>
-                <td>@farmer.UserModel.Surname</td>
-                <td>@farmer.UserModel.ContactNumber</td>
-                <td>@farmer.Address</td>
-                <td>@farmer.FarmType</td>
-            </tr>
-        }
-    </tbody>
-</table>
+	<br />
+
+	<table class="table table-responsive table-dark">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Contact</th>
+				<th>Address</th>
+				<th>Farm Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var farmer in Model)
+			{
+				<tr>
+					<td>@farmer.UserModel.FirstName</td>
+					<td>@farmer.UserModel.Surname</td>
+					<td>@farmer.UserModel.ContactNumber</td>
+					<td>@farmer.Address</td>
+					<td>@farmer.FarmType</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

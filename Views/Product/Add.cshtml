@@ -3,6 +3,10 @@
 @{
 	ViewData["Title"] = "Add a new product";
 }
+
+<div class="transparent-card">
+	<h1>Add a Product</h1>
+	<hr/>
 <form method="post" action="Add">
 	<div class="mb-3">
 	<label for="" class="form-label">Product Name</label>
@@ -27,5 +31,6 @@
 		<input type="date" class="form-control" asp-for="ProductionDate" />
 	</div>
 
-	<button type="submit" class="btn btn-primary"> Add </button>
+	<button type="submit" class="btn btn-outline-light"> Add </button>
 </form>
+</div>

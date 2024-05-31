@@ -8,7 +8,7 @@
 	@if (User.IsInRole("Farmer"))
 	{
 		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
+			<img class="card-img-top" src="../tractor.jpeg" alt="image of a tractor">
 			<div class="card-content">
 				<h3 class="card-title">Add Products</h3>
 			<p class="card-text">Add new products with essential details to your profile.</p>
@@ -17,10 +17,10 @@
 		</div>
 
 		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
+			<img class="card-img-top" src="../wind turbine.jpeg" alt="image of wind turbines">
 			<div class="card-content">
 				<h3 class="card-title">View Products</h3>
-				<p class="card-text">View your products.</p>
+				<p class="card-text">View a list of all your products.</p>
 				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Index">View</a>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 	@if (User.IsInRole("Employee"))
 	{
 		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
+			<img class="card-img-top" src="../farmer.jpeg" alt="image of a farmer">
 			<div class="card-content">
 				<h3 class="card-title">Add Farmer</h3>
 				<p class="card-text">Add new farmer profiles with essential details.</p>
@@ -39,7 +39,7 @@
 
 
 		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
+			<img class="card-img-top" src="../wind turbine.jpeg" alt="image of wind turbines">
 			<div class="card-content">
 				<h3 class="card-title">Product List</h3>
 				<p class="card-text">View and filter through a comprehensive list of products from any farmer.</p>
