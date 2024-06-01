@@ -2,7 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <div class="card-container">
 
 	@if (User.IsInRole("Farmer"))
@@ -17,20 +16,47 @@
 		</div>
 
 		<div class="card">
-			<img class="card-img-top" src="../farmers talking.jpeg" alt="image of a farmers talking">
-			<div class="card-content">
-				<h3 class="card-title">Farming Hub</h3>
-				<p class="card-text">Seek advice, share experiences, and collaborate on sustainable farming initiatives.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Hub">Explore</a>
-			</div>
-		</div>
-
-		<div class="card">
 			<img class="card-img-top" src="../wind turbine.jpeg" alt="image of wind turbines">
 			<div class="card-content">
 				<h3 class="card-title">View Products</h3>
 				<p class="card-text">View a list of all your products.</p>
 				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Index">View</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img class="card-img-top" src="../farmers talking.jpeg" alt="image of a farmers talking">
+			<div class="card-content">
+				<h3 class="card-title">Farming Hub</h3>
+				<p class="card-text">Seek advice, share experiences, and collaborate on sustainable farming initiatives.</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img class="card-img-top" src="../marketplace.jpeg" alt="image of a tractor and wind turbines">
+			<div class="card-content">
+				<h3 class="card-title">Market Place</h3>
+				<p class="card-text">Green energy market place.</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img class="card-img-top" src="../resources.jpeg" alt="image of a tractor and wind turbines">
+			<div class="card-content">
+				<h3 class="card-title">Educational Resources</h3>
+				<p class="card-text"> Educational Resource for integrating green energy technologies</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Resources">View Resources</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img class="card-img-top" src="../collab.jpeg" alt="image of a tractor and wind turbines">
+			<div class="card-content">
+				<h3 class="card-title">Collaboration and Funding Opportunities</h3>
+				<p class="card-text">Collaboration and Funding Opportunities for farmers</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Collab">View Collaboration and Funding Opportunities</a>
 			</div>
 		</div>
 	}
@@ -55,8 +81,25 @@
 				<a class="btn btn-light" asp-area="" asp-controller="Employee" asp-action="Index">View</a>
 			</div>
 		</div>
-	}
 
+		<div class="card">
+			<img class="card-img-top" src="../farmers talking.jpeg" alt="image of a farmers talking">
+			<div class="card-content">
+				<h3 class="card-title">Farming Hub</h3>
+				<p class="card-text">Seek advice, share experiences, and collaborate on sustainable farming initiatives.</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<img class="card-img-top" src="../marketplace.jpeg" alt="image of a tractor and wind turbines">
+			<div class="card-content">
+				<h3 class="card-title">Market Place</h3>
+				<p class="card-text">Green energy market place.</p>
+				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a>
+			</div>
+		</div>
+	}
 </div>
 	
 

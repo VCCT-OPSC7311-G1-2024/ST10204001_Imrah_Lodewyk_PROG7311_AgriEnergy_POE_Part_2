@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FarmerDetail>
+﻿@model IEnumerable<Product>
 
 @{
     ViewData["Title"] = "Farmers List";
@@ -45,8 +45,9 @@
 	<table class="table table-responsive table-dark">
 		<thead>
 			<tr>
-@* 				<th>Product Name</th>
-				<th>Production Date</th> *@
+				<th>Product Name</th>
+				<th>Production Date</th>
+				<th>Category</th>
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Contact</th>
@@ -55,15 +56,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var farmer in Model)
+			@foreach (var product in Model)
 			{
 				<tr>
-
-					<td>@farmer.UserModel.FirstName</td>
-					<td>@farmer.UserModel.Surname</td>
-					<td>@farmer.UserModel.ContactNumber</td>
-					<td>@farmer.Address</td>
-					<td>@farmer.FarmType</td>
+					<td>@product.ProductName</td>
+					<td>@product.ProductionDate?.ToString("yyyy-MM-dd")</td>
+					<td>@product.Category</td>
+					<td>@product.UserModel?.FirstName</td>
+					<td>@product.UserModel?.Surname</td>
+					<td>@product.UserModel?.ContactNumber</td>
+					<td>@product.FarmerModel?.Address</td>
+					<td>@product.FarmerModel?.FarmType</td>
 				</tr>
 			}
 		</tbody>

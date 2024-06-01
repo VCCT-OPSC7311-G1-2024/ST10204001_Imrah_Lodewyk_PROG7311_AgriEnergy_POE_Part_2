@@ -9,17 +9,20 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Models
 		[Key]
 		public Guid FarmerDetailId { get; set; }
 
-		//--------------Foreign key-----------------
+		//--------------Foreign keys-----------------
 		[ForeignKey("UserModel")]
 		public string UserId { get; set; } 
 		public User UserModel { get; set; }
-        //--------------Foreign key-----------------
 
-        [PersonalData]
+		//--------------Foreign keys-----------------
+
+		[PersonalData]
 		public string Address { get; set; }
 
 		[PersonalData]
 		public string FarmType { get; set; }
+
+		public ICollection<Product> Products { get; set; }
 	}
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

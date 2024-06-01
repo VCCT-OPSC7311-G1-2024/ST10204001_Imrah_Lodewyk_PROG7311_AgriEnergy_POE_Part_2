@@ -4,6 +4,7 @@ using AgriEnergy_ST10204001_POE_Part_2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240531215301_final")]
+    partial class final
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,9 +60,6 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("FarmerId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -73,8 +72,6 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("FarmerId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -305,19 +302,11 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
 
             modelBuilder.Entity("AgriEnergy_ST10204001_POE_Part_2.Models.Product", b =>
                 {
-                    b.HasOne("AgriEnergy_ST10204001_POE_Part_2.Models.FarmerDetail", "FarmerModel")
-                        .WithMany()
-                        .HasForeignKey("FarmerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("AgriEnergy_ST10204001_POE_Part_2.Models.User", "UserModel")
                         .WithOne("Product")
                         .HasForeignKey("AgriEnergy_ST10204001_POE_Part_2.Models.Product", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("FarmerModel");
 
                     b.Navigation("UserModel");
                 });

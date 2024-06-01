@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Syncfusion.EJ2.Linq;
 
 namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
 {
@@ -22,12 +23,26 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
         {
             this._context = context;
         }
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		/// <summary>
+		/// HttpGet method for viewing list Products Interface 
+		/// </summary>
+		/// <param name="startDate"></param>
+		/// <param name="endDate"></param>
+		/// <param name="category"></param>
+		/// <returns></returns>
 		[HttpGet]
 		public IActionResult Index(DateTime? startDate, DateTime? endDate, string category)
 		{
-			var products = _context.Products.AsQueryable();
+			// Get the current user's UserId
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+			// Query to get products for the logged-in user
+			var products = _context.Products
+								   .Where(p => p.UserId == userId)
+								   .AsQueryable();
+
+			// Apply date range filter
 			if (startDate.HasValue)
 			{
 				products = products.Where(p => p.ProductionDate >= startDate.Value);
@@ -38,6 +53,7 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
 				products = products.Where(p => p.ProductionDate <= endDate.Value);
 			}
 
+			// Apply category filter
 			if (!string.IsNullOrEmpty(category))
 			{
 				products = products.Where(p => p.Category == category);
@@ -67,38 +83,73 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
 			return View(products.ToList());
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		/// <summary>
+		/// HttpGet method for Adding Product Interface 
+		/// </summary>
+		/// <returns></returns>
 		[HttpGet]
         public IActionResult Add()
         {
             return View();
         }
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-        [HttpPost]
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		/// <summary>
+		/// HttpGet method for Adding Product Interface 
+		/// </summary>
+		/// <param name="product"></param>
+		/// <returns></returns>
+		[HttpPost]
         public async Task<IActionResult> Add(Product product)
         {
-            // Retrieve the current user's UserId
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			// Retrieve the current user's UserId
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var newProduct = new Product() 
-            {
-                ProductId = Guid.NewGuid(),
+			// Retrieve the FarmerId associated with the current user
+			var farmer = await _context.FarmerDetails
+				.FirstOrDefaultAsync(f => f.UserId == userId);
+
+			if (farmer == null)
+			{
+				// Handle the case where no farmer is found for the user
+				ModelState.AddModelError("", "No farmer details found for the current user.");
+				return View(product); // Return the view with the product to show errors
+			}
+
+			var newProduct = new Product()
+			{
+				ProductId = Guid.NewGuid(),
+				FarmerId = farmer.FarmerDetailId,
 				UserId = userId,
-                ProductName = product.ProductName,
-                Category = product.Category,
-                ProductionDate = product.ProductionDate,
-            };
+				ProductName = product.ProductName,
+				Category = product.Category,
+				ProductionDate = product.ProductionDate,
+			};
 
-            await _context.Products.AddAsync(newProduct);
+			await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();  
 
             return RedirectToAction("Add");
         }
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		/// <summary>
+		/// HttpGet method for Educational and Training Resources View
+		/// </summary>
+		/// <returns></returns>
 		[HttpGet]
-		public IActionResult Hub()
+		public IActionResult Resources()
 		{
 			return View();
 		}
-    }
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+		/// <summary>
+		/// HttpGet method for Project Collaboration and Funding Opportunities View
+		/// </summary>
+		/// <returns></returns>
+		[HttpGet]
+		public IActionResult Collab()
+		{
+			return View();
+		}
+	}
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
