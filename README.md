@@ -18,7 +18,8 @@ This web platform was developed on Visual Studio Community 2022, using ASP.NET C
 This README explores the application's components, database structure, and key methods. 
 
 
-		## TABLE OF CONTENTS:
+
+## TABLE OF CONTENTS:
 
 1.	Project Description
 2.	Database Structure
@@ -27,7 +28,8 @@ This README explores the application's components, database structure, and key m
 5.	Additional Features
 
 
-						## PROJECT DESCRIPTION
+
+## PROJECT DESCRIPTION
 
 The purpose of this prototype is to showcase the basic functions and UI of the web platform, as well as the general flow or layout of the platform.
 It works through the process of creating a user, whether it’s Employee or Farmer and logging that user into the platform where they are provided with functions based on their user roles.
@@ -38,7 +40,7 @@ The data gets stored in a local database and can be manipulated by the user thro
 The prototype is designed to begin the development of the ArgiEnergy Connect web platform’s initiative to provide sustainable farming.
 
 
-						## DATABASE STRUCTURE
+## DATABASE STRUCTURE
 
 Database Disclaimer:
 
@@ -53,7 +55,7 @@ To see the data stored in the database:
 Apart from that, the FarmerDetails and Products tables were added to the database.
 
 
-						## HOW TO USE:
+## HOW TO USE:
 
 To make use of the AgriEnergy application, follow these steps:
 
@@ -70,7 +72,8 @@ To make use of the AgriEnergy application, follow these steps:
 9. Log into the application.
 		
 
-						## STEP-BY-STEP
+
+## STEP-BY-STEP
 
 Step 1:		Starting Up
 
@@ -132,8 +135,13 @@ On the Home Screen, they are presented with options for functions:
 				- Farm Type
 	
 	Once all of those areas are satisfied, the User selects the SUBMIT button.
+
+	The last field is the Temporary Password for the Farmer (more on this below) that should be copied for the Farmer to use later.
+	After creating a new farmer account, the user will be redirected to the HOME page.
+
 	This button generates a Temporary Password for the Farmer (more on this below) that should be copied for the Farmer to use later.
 	The user then select the CONTINUE button which clears all fields to add another Farmer user.
+
 	Should the user not want to create another Farmer user, they select the HOME link at the top left of the screen.
 
 
@@ -149,6 +157,7 @@ On the Home Screen, they are presented with options for functions:
 	Step 3.3:		Marketplace/Farm Hub
 
 	On the HOME interface, the user can select the VIEW MARKETPLACE button which will redirect them to prototype of the Marketplace Interface.
+	Or, the user can select EXPLORE, which redirects them to the prototype of the Farm Hub Interfaces.
 	Or, the user can select VIEW FARM HUB, which redirects them to the prototype of the Farm Hub Interfaces.
 	These prototype are strictly for layout and UI purposes.
 	None of the buttons or links are functional.
@@ -166,13 +175,14 @@ Upon creation, the Farmer is given a temporary password that needed to be copied
 				- email
 				- temporary password
 
+		Once the Farmer has logged in with their temporary password, they will be able to change it when clicking on their email in the top right hand corner.
+
 		Once they select the LOG IN button, they will be redirected to the RESET PASSWORD interface.
 
 		Here they will be prompted create a new password and confirm that password.
 		Once completed, they will select the RESET PASSWORD button, which will take them back to the LOGIN interface.
 
 		This time when they log in, the need to use the password the had just created to access the platform.
-
 
 Once the Farmer has logged in with their new password they are navigated to the HOME Screen.
 
@@ -181,7 +191,8 @@ On the HOME Screen, they are presented with options for functions:
 		- View Products
 		- Marketplace
 		- Farm Hub
-
+		- Educational and Training Resources
+        	- Project Collaboration and Funding Opportunities
 
 	Step 4.2:		Adding A Product
 		
@@ -205,6 +216,16 @@ On the HOME Screen, they are presented with options for functions:
 	They have the option to filter these products based of the Product Categories or by date of production.
 	They can return to HOME by clicking the HOME link at the top left of the screen.
 
+	Step 4.4:		Marketplace/Farm Hub/Educational and Training Resources/Project Collaboration and Funding Opportunities
+
+	On the HOME interface, the user can select the VIEW MARKETPLACE button which will redirect them to prototype of the Marketplace Interface.
+	Or, the user can select EXPLORE, which redirects them to the prototype of the Farm Hub Interfaces.
+	These prototype are strictly for layout and UI purposes.
+	None of the buttons or links are functional.
+
+	Similarly, the user can navigate to Educational and Training Resources or Project Collaboration and Funding Opportunities Interfaces by select the VIEW RESOUCES or VIEW COLLABORATION OR FUNDING OPPURTUNITIES buttons respectively. 
+	These are also dummy views for layout and UI purposes.
+
 
 	Step 4.4:		Farm Hub
 
@@ -219,14 +240,30 @@ Step 5:			Logging out.
 Users can log out at any point by selecting the LOGOUT link on the top right hand of the screen.
 
 
-			## ADDITIONAL FEATURES
+
+## ADDITIONAL FEATURES
 
 This prototype makes use of temporary passwords generated for Farmers to try and mimic when a user gets a temporary password sent to them via email.
 Because this is a prototype and the emails used to develop this code is dummy emails, this was second best approach.
 
 The prototype also tries for security by only allowing Employees to register using a “company issued” email.
+
+
+### Dummy Search Bar
+
+	The prototype includes a dummy search bar for simulating search functionality. This search bar is located at the top of the navigation bar and allows users to input search queries.
+
+#### How to Use:
+
+	1. Navigate to the search bar located at the top of the navigation bar.
+	2. Enter your search query into the search field.
+	3. Press Enter or click the search button to submit your query.
+	4. Results will be displayed on the corresponding page or interface.
+
+	Note: This search bar is for demonstration purposes only and does not perform actual search operations.
 	
 
+## AUTHOR:
+Imrah Lodewyk, ST10204001
 
-			## AUTHOR:
-Imrah Lodewyk
+
