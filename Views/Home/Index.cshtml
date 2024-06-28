@@ -3,7 +3,6 @@
 }
 
 <div class="card-container">
-
 	@if (User.IsInRole("Farmer"))
 	{
 		<div class="card">
@@ -11,7 +10,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Add Products</h3>
 			<p class="card-text">Add new products with essential details to your profile.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Add">Add</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Add">Add</a></center>
 			</div>
 		</div>
 
@@ -20,7 +19,7 @@
 			<div class="card-content">
 				<h3 class="card-title">View Products</h3>
 				<p class="card-text">View a list of all your products.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Index">View</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Index">View</a></center>
 			</div>
 		</div>
 
@@ -29,7 +28,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Farming Hub</h3>
 				<p class="card-text">Seek advice, share experiences, and collaborate on sustainable farming initiatives.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a></center>	
 			</div>
 		</div>
 
@@ -38,7 +37,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Market Place</h3>
 				<p class="card-text">Green energy market place.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a></center>		
 			</div>
 		</div>
 
@@ -47,7 +46,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Educational Resources</h3>
 				<p class="card-text"> Educational Resource for integrating green energy technologies</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Resources">View Resources</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Resources">View Resources</a></center>
 			</div>
 		</div>
 
@@ -56,7 +55,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Collaboration and Funding Opportunities</h3>
 				<p class="card-text">Collaboration and Funding Opportunities for farmers</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Collab">View Collaboration and Funding Opportunities</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Product" asp-action="Collab">View Collaboration and Funding Opportunities</a></center>
 			</div>
 		</div>
 	}
@@ -68,7 +67,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Add Farmer</h3>
 				<p class="card-text">Add new farmer profiles with essential details.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Employee" asp-action="Add">Add</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Employee" asp-action="Add">Add</a></center>
 			</div>
 		</div>
 
@@ -78,7 +77,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Product List</h3>
 				<p class="card-text">View and filter through a comprehensive list of products from any farmer.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Employee" asp-action="Index">View</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Employee" asp-action="Index">View</a></center>			
 			</div>
 		</div>
 
@@ -87,7 +86,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Farming Hub</h3>
 				<p class="card-text">Seek advice, share experiences, and collaborate on sustainable farming initiatives.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Hub">Explore</a></center>
 			</div>
 		</div>
 
@@ -96,7 +95,7 @@
 			<div class="card-content">
 				<h3 class="card-title">Market Place</h3>
 				<p class="card-text">Green energy market place.</p>
-				<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a>
+				<center><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="MarketPlace">View Marketplace</a></center>				
 			</div>
 		</div>
 	}

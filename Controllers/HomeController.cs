@@ -1,10 +1,12 @@
 ﻿using AgriEnergy_ST10204001_POE_Part_2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AgriEnergy_ST10204001_POE_Part_2.Controllers
 {
-    public class HomeController : Controller
+	[Authorize]
+	public class HomeController : Controller
     {
         //Declaration of Variables
         private readonly ILogger<HomeController> _logger;

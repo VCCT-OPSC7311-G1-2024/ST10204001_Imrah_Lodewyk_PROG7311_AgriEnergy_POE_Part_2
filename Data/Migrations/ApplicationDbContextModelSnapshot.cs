@@ -45,7 +45,7 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("FarmerDetails");
+                    b.ToTable("FarmerDetails", (string)null);
                 });
 
             modelBuilder.Entity("AgriEnergy_ST10204001_POE_Part_2.Models.Product", b =>
@@ -79,7 +79,7 @@ namespace AgriEnergy_ST10204001_POE_Part_2.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("AgriEnergy_ST10204001_POE_Part_2.Models.User", b =>
