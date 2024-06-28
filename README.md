@@ -82,8 +82,7 @@ Step 1:		Starting Up
 
 Step 2:		Employee Login & Register
 
-	The first interface that greets the user is the HOME INTERFACE.
-	Where the user - whether Employee or Farmer – would navigate to the navigation bar to log in or register. 
+	The first interface that greets the user is the LOGIN INTERFACE. 
 
 	If there is no user in the database, a user needs to be created.
 	The first user that needs to be created is an Employee user (Note: Farmer user can only be created though the Employee user)
@@ -192,7 +191,7 @@ On the HOME Screen, they are presented with options for functions:
 		- Marketplace
 		- Farm Hub
 		- Educational and Training Resources
-        	- Project Collaboration and Funding Opportunities
+        - Project Collaboration and Funding Opportunities
 
 	Step 4.2:		Adding A Product
 		
